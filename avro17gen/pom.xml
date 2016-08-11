@@ -12,12 +12,6 @@
 
   <artifactId>avro17gen</artifactId>
 
-  <properties>
-    <avro.version>1.7.7</avro.version>
-    <avro.compiler.output.folder>${project.build.directory}/generated-sources/avro</avro.compiler.output.folder>
-  </properties>
-
-
   <build>
     <plugins>
       <plugin>
@@ -48,7 +42,7 @@
       <plugin>
         <groupId>org.apache.avro</groupId>
         <artifactId>avro-maven-plugin</artifactId>
-        <version>${avro.version}</version>
+        <version>${avro17.version}</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
@@ -69,7 +63,7 @@
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>${avro.version}</version>
+      <version>${avro17.version}</version>
     </dependency>
   </dependencies>
 

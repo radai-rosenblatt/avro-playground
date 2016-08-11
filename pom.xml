@@ -11,12 +11,16 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <avro14.version>1.4.1</avro14.version>
+    <avro17.version>1.7.7</avro17.version>
+    <avro.compiler.output.folder>${project.build.directory}/generated-sources/avro</avro.compiler.output.folder>
   </properties>
 
   <modules>
     <module>schema</module>
     <module>avro14gen</module>
     <module>avro17gen</module>
+    <module>avro17using14gen</module>
   </modules>
 
   <build>
