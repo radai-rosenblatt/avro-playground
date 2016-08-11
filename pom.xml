@@ -16,5 +16,6 @@
   <modules>
     <module>schema</module>
     <module>avro14gen</module>
+    <module>avro17gen</module>
   </modules>
 </project>

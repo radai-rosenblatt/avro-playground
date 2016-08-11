@@ -13,6 +13,7 @@
   <artifactId>avro14gen</artifactId>
 
   <properties>
+    <avro.version>1.4.1</avro.version>
     <avro.compiler.lib.folder>${project.build.directory}/avro-compiler-libs</avro.compiler.lib.folder>
     <avro.compiler.output.folder>${project.build.directory}/generated-src/avro</avro.compiler.output.folder>
   </properties>
@@ -136,7 +137,7 @@
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>1.4.1</version>
+      <version>${avro.version}</version>
     </dependency>
   </dependencies>
 </project>
