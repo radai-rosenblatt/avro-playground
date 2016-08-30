@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "RecordB",
+  "namespace": "net.radai.avroplayground.b",
+  "fields" : [
+              {"name":"bla", "type":"string"},
+              {"name":"entityType","type":"net.radai.avroplayground.a.Type"}
+             ]
+}

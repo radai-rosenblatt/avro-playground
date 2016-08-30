@@ -10,28 +10,13 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>avro17using14gen</artifactId>
+  <artifactId>avro14generator</artifactId>
 
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>avro14gen</artifactId>
-      <version>${project.version}</version>
-      <exclusions>
-        <!-- TODO - exclude all avro 1.4 deps -->
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>${avro17.version}</version>
-    </dependency>
-
-    <!-- test libs -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
+      <version>${avro14.version}</version>
     </dependency>
   </dependencies>
 

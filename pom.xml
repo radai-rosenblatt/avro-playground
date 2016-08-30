@@ -18,6 +18,7 @@
 
   <modules>
     <module>schema</module>
+    <module>avro14generator</module>
     <module>avro14gen</module>
     <module>avro17gen</module>
     <module>avro17using14gen</module>
@@ -53,4 +54,15 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

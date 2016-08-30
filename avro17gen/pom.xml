@@ -51,6 +51,13 @@
             </goals>
             <configuration>
               <sourceDirectory>${project.build.directory}/avro</sourceDirectory>
+              <!-- explicitly define order of compilation because avro-maven-plugin sucks -->
+              <imports>
+                <import>${project.build.directory}/avro/schema.avsc</import>
+                <import>${project.build.directory}/avro/Type.avsc</import>
+                <import>${project.build.directory}/avro/RecordB.avsc</import>
+                <import>${project.build.directory}/avro/RecordA.avsc</import>
+              </imports>
               <outputDirectory>${avro.compiler.output.folder}</outputDirectory>
             </configuration>
           </execution>
@@ -64,6 +71,14 @@
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>${avro17.version}</version>
+    </dependency>
+
+    <!-- test libs -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

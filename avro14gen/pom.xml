@@ -89,12 +89,11 @@
             <configuration>
               <executable>java</executable>
               <arguments>
+                <!--<argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005</argument>-->
                 <argument>-classpath</argument>
                 <argument>${avro.compiler.lib.folder}/*</argument>
-                <argument>org.apache.avro.tool.Main</argument>
-                <argument>compile</argument>
-                <argument>schema</argument>
-                <argument>${project.build.directory}/avro/schema.avsc</argument>
+                <argument>org.apache.avro.TreeCompiler</argument>
+                <argument>${project.build.directory}/avro/</argument>
                 <argument>${avro.compiler.output.folder}</argument>
               </arguments>
             </configuration>
@@ -124,9 +123,22 @@
 
   <dependencies>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>avro14generator</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>${avro14.version}</version>
+    </dependency>
+
+    <!-- test libs -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

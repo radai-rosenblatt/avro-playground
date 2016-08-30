@@ -1,0 +1,6 @@
+{
+"type":"enum",
+ "name":"Type",
+ "namespace": "net.radai.avroplayground.a",
+ "symbols":["A", "B"]
+}

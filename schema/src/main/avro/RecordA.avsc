@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "RecordA",
+  "namespace": "net.radai.avroplayground.a",
+  "fields" : [
+              {"name":"bla", "type":"string"},
+              {"name":"items",
+               "type":{"type":"array",
+                       "items":"net.radai.avroplayground.b.RecordB"
+                      }
+              }
+             ]
+}
