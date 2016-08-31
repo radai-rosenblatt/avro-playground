@@ -10,16 +10,10 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>avro17using14gen</artifactId>
+  <artifactId>avro17lib</artifactId>
 
   <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>avro14gen</artifactId>
-      <exclusions>
-        <!-- TODO - exclude all avro 1.4 deps -->
-      </exclusions>
-    </dependency>
+
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
@@ -27,11 +21,16 @@
     </dependency>
 
     <!-- test libs -->
+
+    <dependency>
+      <groupId>net.radai.avroplayground</groupId>
+      <artifactId>avro17gen</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
-
 </project>

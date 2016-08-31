@@ -20,7 +20,9 @@
     <module>schema</module>
     <module>avro14generator</module>
     <module>avro14gen</module>
+    <module>avro14lib</module>
     <module>avro17gen</module>
+    <module>avro17lib</module>
     <module>avro17using14gen</module>
   </modules>
 
@@ -57,6 +59,20 @@
 
   <dependencyManagement>
     <dependencies>
+
+      <!-- inter-module -->
+
+      <dependency>
+        <groupId>net.radai.avroplayground</groupId>
+        <artifactId>avro14gen</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.radai.avroplayground</groupId>
+        <artifactId>avro17gen</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
