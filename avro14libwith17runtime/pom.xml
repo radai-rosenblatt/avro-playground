@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>net.radai.avroplayground</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>avro14libwith17runtime</artifactId>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>download avro 1.7</id>
+            <phase>generate-test-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.avro</groupId>
+                  <artifactId>avro</artifactId>
+                  <version>${avro17.version}</version>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                  <destFileName>sneakyAvro.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <classpathDependencyExcludes>
+            <classpathDependencyExcludes>org.apache.avro:avro</classpathDependencyExcludes> <!-- remove avro 1.4 -->
+          </classpathDependencyExcludes>
+          <additionalClasspathElements>
+            <additionalClasspathElement>${project.build.directory}/lib/sneakyAvro.jar</additionalClasspathElement>
+          </additionalClasspathElements>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.radai.avroplayground</groupId>
+      <artifactId>avro14gen</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.radai.avroplayground</groupId>
+      <artifactId>avro14lib</artifactId>
+    </dependency>
+
+    <!-- test libs -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
